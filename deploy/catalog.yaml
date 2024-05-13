@@ -2,7 +2,7 @@ apiVersion: operators.coreos.com/v1alpha1
 kind: CatalogSource
 metadata:
   name: spark-k8s-operator-catalog
-  # namespace: olm
+  namespace: kubedatastack-operators
 spec:
   sourceType: grpc
   image: registry.cn-shanghai.aliyuncs.com/huagang/spark-k8s-operator-catalog:latest

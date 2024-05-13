@@ -36,16 +36,17 @@ type SparkHistoryServerReconciler struct {
 	Scheme *runtime.Scheme
 }
 
-// +kubebuilder:rbac:groups=spark.zncdata.dev,resources=sparkhistoryservers,verbs=get;list;watch;create;update;patch;delete
-// +kubebuilder:rbac:groups=spark.zncdata.dev,resources=sparkhistoryservers/status,verbs=get;update;patch
-// +kubebuilder:rbac:groups=spark.zncdata.dev,resources=sparkhistoryservers/finalizers,verbs=update
-// +kubebuilder:rbac:groups=apps,resources=deployments,verbs=get;list;watch;create;update;patch;delete
-// +kubebuilder:rbac:groups=core,resources=configmaps,verbs=get;list;watch;create;update;patch;delete
-// +kubebuilder:rbac:groups=core,resources=secrets,verbs=get;list;watch;create;update;patch;delete
-// +kubebuilder:rbac:groups=core,resources=services,verbs=get;list;watch;create;update;patch;delete
-// +kubebuilder:rbac:groups=core,resources=persistentvolumeclaims,verbs=get;list;watch;create;update;patch;delete
-// +kubebuilder:rbac:groups=networking.k8s.io,resources=ingresses,verbs=get;list;watch;create;update;patch;delete
-// +kubebuilder:rbac:groups=core,resources=pods,verbs=get;list;watch
+// +kubebuilder:rbac:namespace=system,groups=coordination.k8s.io,resources=leases,verbs=get;list;watch;create;update;patch;delete
+// +kubebuilder:rbac:namespace=system,groups=spark.zncdata.dev,resources=sparkhistoryservers,verbs=get;list;watch;create;update;patch;delete
+// +kubebuilder:rbac:namespace=system,groups=spark.zncdata.dev,resources=sparkhistoryservers/status,verbs=get;update;patch
+// +kubebuilder:rbac:namespace=system,groups=spark.zncdata.dev,resources=sparkhistoryservers/finalizers,verbs=update
+// +kubebuilder:rbac:namespace=system,groups=apps,resources=deployments,verbs=get;list;watch;create;update;patch;delete
+// +kubebuilder:rbac:namespace=system,groups=core,resources=configmaps,verbs=get;list;watch;create;update;patch;delete
+// +kubebuilder:rbac:namespace=system,groups=core,resources=secrets,verbs=get;list;watch;create;update;patch;delete
+// +kubebuilder:rbac:namespace=system,groups=core,resources=services,verbs=get;list;watch;create;update;patch;delete
+// +kubebuilder:rbac:namespace=system,groups=core,resources=persistentvolumeclaims,verbs=get;list;watch;create;update;patch;delete
+// +kubebuilder:rbac:namespace=system,groups=networking.k8s.io,resources=ingresses,verbs=get;list;watch;create;update;patch;delete
+// +kubebuilder:rbac:namespace=system,groups=core,resources=pods,verbs=get;list;watch
 
 // Reconcile is part of the main kubernetes reconciliation loop which aims to
 // move the current state of the cluster closer to the desired state.
