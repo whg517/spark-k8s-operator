@@ -4,6 +4,8 @@ metadata:
   name: oidc
 spec:
   bindings:
+  - name: spark_version
+    value: ($values.product_version)
   - name: SPARK_MINIO_USER
     value: spark
   - name: SPARK_MINIO_PASSWORD
