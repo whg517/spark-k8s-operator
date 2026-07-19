@@ -4,7 +4,7 @@ metadata:
   name: sparkhistory
 spec:
   image:
-    productVersion: 3.5.5
+    productVersion: ($values.product_version)
   clusterConfig:
     listenerClass: cluster-internal
     logFileDirectory:
